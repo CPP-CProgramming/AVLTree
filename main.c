@@ -85,7 +85,7 @@ Node* balance(Node* node)
 		}
 
 	}
-	else if (difference <= 2)
+	else if (difference <= -2)
 	{
 		if (getDifference(node->rightChild) <= -1)
 		{
