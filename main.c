@@ -4,7 +4,7 @@
 int getMax(int a, int b)
 {
 	if (a > b) return a;
-	return a;
+	return b;
 }
 
 typedef struct 
@@ -41,6 +41,7 @@ Node* rotateLL(Node* node)
 	node->leftChild = leftChild->rightChild;
 	leftChild->rightChild = node;
 	setHeight(node);
+
 	return leftChild;
 }
 
@@ -64,9 +65,9 @@ Node* rotateLR(Node* node)
 Node* rotateRL(Node* node)
 {
 	Node* rightChild = node->rightChild;
-	node->rightChild = rotateRR(rightChild);
+	node->rightChild = rotateLL(rightChild);
 	setHeight(node->rightChild);
-	return rotateLL(node);
+	return rotateRR(node);
 }
 
 Node* balance(Node* node) 
